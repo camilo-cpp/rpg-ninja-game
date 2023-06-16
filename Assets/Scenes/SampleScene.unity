@@ -987,6 +987,7 @@ GameObject:
   - component: {fileID: 2001443617}
   - component: {fileID: 2001443616}
   - component: {fileID: 2001443618}
+  - component: {fileID: 2001443620}
   - component: {fileID: 2001443619}
   m_Layer: 0
   m_Name: GreenNinja
@@ -1157,6 +1158,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerIdle: Idle
   layerWalk: Walk
+--- !u!114 &2001443620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001443612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4c6df51c9e3f440bf285f3d3e85eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initHealth: 100
+  MaxHealth: 100
 --- !u!1 &2015840949
 GameObject:
   m_ObjectHideFlags: 0

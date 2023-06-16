@@ -4,15 +4,45 @@ using UnityEngine;
 
 public class BaseLife : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    protected float initHealth;
+    [SerializeField]
+    protected float MaxHealth;
+
+    public float Health{ get; protected set; }
+
     void Start()
     {
-        
+        Health = initHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        
+        if (damage <= 0)
+        {
+            return;
+        }
+
+        if (Health > 0)
+        {
+            Health -= damage;
+            UpdateBarLife(Health, MaxHealth);
+
+            if (Health <= 0)
+            {
+                UpdateBarLife(Health, MaxHealth);
+                DefeatedCharacter();
+            }
+        }
+    }
+
+    protected virtual void UpdateBarLife(float actualLife, float maxLife)
+    {
+
+    }
+
+    protected virtual void DefeatedCharacter()
+    {
+
     }
 }
