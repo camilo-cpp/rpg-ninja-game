@@ -12,6 +12,7 @@ public class CharacterAnimation : MonoBehaviour
     private CharacterMovement _characterMovement;
     private readonly int directionX = Animator.StringToHash("X");
     private readonly int directionY = Animator.StringToHash("Y");
+    private readonly int dead = Animator.StringToHash("Dead");
 
     private void Awake()
     {
@@ -56,5 +57,23 @@ public class CharacterAnimation : MonoBehaviour
         {
             ActivateLayer(layerIdle);
         }
+    }
+
+    private void ResponseDefeatCharacter()
+    {
+        if (_animator.GetLayerWeight(_animator.GetLayerIndex(layerIdle)) == 1)
+        {
+            _animator.SetBool(dead, true);
+        }
+    }
+
+    private void OnEnable()
+    {
+        CharacterLife.EventDeadCharacter += ResponseDefeatCharacter;
+    }
+
+    private void OnDisabled()
+    {
+        CharacterLife.EventDeadCharacter -= ResponseDefeatCharacter;
     }
 }
