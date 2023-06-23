@@ -11,7 +11,7 @@ public class BaseLife : MonoBehaviour
 
     public float Health{ get; protected set; }
 
-    void Start()
+    protected virtual void Start()
     {
         Health = initHealth;
     }
