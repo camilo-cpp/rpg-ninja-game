@@ -59,6 +59,11 @@ public class CharacterAnimation : MonoBehaviour
         }
     }
 
+    public void ReviveCharacter() {
+        ActivateLayer(layerIdle);
+        _animator.SetBool(dead, false);
+    }
+
     private void ResponseDefeatCharacter()
     {
         if (_animator.GetLayerWeight(_animator.GetLayerIndex(layerIdle)) == 1)

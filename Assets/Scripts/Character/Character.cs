@@ -1,13 +1,16 @@
 using UnityEngine;
 
 public class Character : MonoBehaviour {
-    private CharacterLife _characterLife;
+    public CharacterLife CharacterLife { get; private set; }
+    public CharacterAnimation CharacterAnimation { get; private set; }
 
     private void Awake() {
-        _characterLife = GetComponent<CharacterLife>();
+        CharacterLife = GetComponent<CharacterLife>();
+        CharacterAnimation = GetComponent<CharacterAnimation>();
     }
 
     public void ReviveCharacter() {
-        _characterLife.ReviveCharacter();
+        CharacterLife.ReviveCharacter();
+        CharacterAnimation.ReviveCharacter();
     }
 }

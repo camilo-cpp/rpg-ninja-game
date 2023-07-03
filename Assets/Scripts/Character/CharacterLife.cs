@@ -29,7 +29,7 @@ public class CharacterLife : BaseLife
             TakeDamage(10);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             RestoreHealth(10);
         }
